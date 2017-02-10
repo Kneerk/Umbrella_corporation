@@ -2,7 +2,7 @@ defmodule ENetwork do
  	require Logger
 
  	def accept(port) do
- 		{:ok, socket} = :gen_udp.open(port, [:binary, active: false, reuseaddr: true])
+ 		{:ok, socket} = :gen_udp.open(port, [:list, active: false, reuseaddr: true])
  		Logger.info "Accepting connections on port #{port}"
  		serve(socket)
  	end
