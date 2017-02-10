@@ -11,7 +11,7 @@ defmodule ENetwork do
  	defp serve(socket) do
  	:gen_udp.send(socket, {129, 241, 187, 255}, 30000, "hei")
  	socket |> read_line() |> write_line()
- 	sleep(2000)
+ 	Process.sleep(2000)
  	serve(socket)
  	end
 
