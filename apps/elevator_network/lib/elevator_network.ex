@@ -16,7 +16,7 @@ defmodule ENetwork do
  	end
 
  	defp read_line(socket) do
- 		{:ok, data} = :gen_udp.rec(socket, 0)
+ 		{:ok, data} = :gen_udp.recv(socket, 0)
  		data
  	end
 
